@@ -1,0 +1,19 @@
+{
+  "name": "boost-console",
+  "version": "0.1.0",
+  "description": "A command-line-like app",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "hbcompile": "handlebars -a -m ./scripts/views/templates/> ./scripts/views/templates.js",
+    "scss": "node-sass styles/main.scss styles/main.css",
+    "build": "npm run scss && npm run hbcompile",
+    "start": "http-server"
+  },
+  "author": "Jiawei LUO",
+  "license": "MIT",
+  "devDependencies": {
+    "handlebars": "^4.0.5",
+    "http-server": "^0.9.0",
+    "node-sass": "^3.10.0"
+  }
+}

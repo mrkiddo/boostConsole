@@ -1,0 +1,15 @@
+.footer {
+  position: absolute;
+  z-index: 999;
+  bottom: 30px;
+  left: 50%;
+  width: 400px;
+  margin-left: -200px;
+  padding: 10px 10px;
+  border-radius: 25em;
+  text-align: center;
+  background-color: #ccc;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 11px;
+  color: #888;
+}

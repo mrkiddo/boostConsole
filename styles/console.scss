@@ -1,0 +1,132 @@
+// ----
+// Sass
+
+$modal-width: 350px;
+$modal-height: 150px;
+
+@mixin top-radius ($radius) {
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
+}
+
+body {
+  padding-top: 10px;
+  background-color: #a9efcd;;
+}
+
+.boost-console {
+  position: relative;
+  float: left;
+  box-sizing: border-box;
+  width: 400px;
+  margin: 50px 20px 10px 20px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 2px #ccc;
+  @include top-radius(8px);
+
+  .console-caption {
+    position: relative;
+    background-color: #eee;
+    padding: 5px 10px;
+    @include top-radius(7px);
+
+    .caption-control {
+      display: inline-block;
+
+      .control-base {
+        display: inline-block;
+        border-radius: 50em;
+        height: 15px;
+        width: 15px;
+      }
+
+      .control-close {
+        @extend .control-base;
+        background-color: red;
+
+        &:hover {
+          background-color: pink;
+        }
+      }
+
+      .control-min {
+        @extend .control-base;
+        background-color: yellow;
+        margin-left: 3px;
+
+        &:hover {
+          background-color: white;
+        }
+      }
+    }
+
+    .caption-title {
+      display: inline-block;
+      position: absolute;
+      left: 35%;
+      color: #555;
+      font-size: 15px;
+    }
+  }
+
+  .display-wrapper {
+    min-height: 100px;
+    max-height: 100px;
+    background-color: #ffffff;
+    overflow-y: auto;
+
+    .display-line {
+      padding: 5px 10px 0px 25px;
+      font-size: 14px;
+      color: green;
+      position: relative;
+
+      &:before {
+        content: "❯ ";
+        position: absolute;
+        left: 10px;
+      }
+
+      &.error {
+        padding-left: 65px;
+        color: red;
+      }
+
+      &.error:before {
+        content: "ERROR:";
+        position: absolute;
+      }
+    }
+  }
+
+  .console-wrapper {
+    height: 40px;
+    background-color: #eee;
+    text-align: center;
+    padding-top: 15px;
+    position: relative;
+
+    &:before {
+      content: "❯ ";
+      position: absolute;
+      left: 10px;
+      top: 20px;
+      color: orange;
+    }
+
+    input[name=command] {
+      position: absolute;
+      left: 30px;
+      width: 80%;
+      border: 0;
+      font-size: 15px;
+      padding: 5px 10px 5px 10px;
+      outline: none;
+      border-radius: 5px;
+
+      &.disabled {
+        background-color: #eee;
+      }
+    }
+  }
+}

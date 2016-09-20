@@ -1,0 +1,161 @@
+@charset "UTF-8";
+@import url(normalize.css);
+@import url(animate.fadeInDown.css);
+body {
+  padding-top: 10px;
+  background-color: #a9efcd; }
+
+.boost-console {
+  position: relative;
+  float: left;
+  box-sizing: border-box;
+  width: 400px;
+  margin: 50px 20px 10px 20px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 2px #ccc;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px; }
+  .boost-console .console-caption {
+    position: relative;
+    background-color: #eee;
+    padding: 5px 10px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px; }
+    .boost-console .console-caption .caption-control {
+      display: inline-block; }
+      .boost-console .console-caption .caption-control .control-base, .boost-console .console-caption .caption-control .control-close, .boost-console .console-caption .caption-control .control-min {
+        display: inline-block;
+        border-radius: 50em;
+        height: 15px;
+        width: 15px; }
+      .boost-console .console-caption .caption-control .control-close {
+        background-color: red; }
+        .boost-console .console-caption .caption-control .control-close:hover {
+          background-color: pink; }
+      .boost-console .console-caption .caption-control .control-min {
+        background-color: yellow;
+        margin-left: 3px; }
+        .boost-console .console-caption .caption-control .control-min:hover {
+          background-color: white; }
+    .boost-console .console-caption .caption-title {
+      display: inline-block;
+      position: absolute;
+      left: 35%;
+      color: #555;
+      font-size: 15px; }
+  .boost-console .display-wrapper {
+    min-height: 100px;
+    max-height: 100px;
+    background-color: #ffffff;
+    overflow-y: auto; }
+    .boost-console .display-wrapper .display-line {
+      padding: 5px 10px 0px 25px;
+      font-size: 14px;
+      color: green;
+      position: relative; }
+      .boost-console .display-wrapper .display-line:before {
+        content: "❯ ";
+        position: absolute;
+        left: 10px; }
+      .boost-console .display-wrapper .display-line.error {
+        padding-left: 65px;
+        color: red; }
+      .boost-console .display-wrapper .display-line.error:before {
+        content: "ERROR:";
+        position: absolute; }
+  .boost-console .console-wrapper {
+    height: 40px;
+    background-color: #eee;
+    text-align: center;
+    padding-top: 15px;
+    position: relative; }
+    .boost-console .console-wrapper:before {
+      content: "❯ ";
+      position: absolute;
+      left: 10px;
+      top: 20px;
+      color: orange; }
+    .boost-console .console-wrapper input[name=command] {
+      position: absolute;
+      left: 30px;
+      width: 80%;
+      border: 0;
+      font-size: 15px;
+      padding: 5px 10px 5px 10px;
+      outline: none;
+      border-radius: 5px; }
+      .boost-console .console-wrapper input[name=command].disabled {
+        background-color: #eee; }
+
+.loading-wrapper {
+  font-family: "Comic Sans MS", cursive, sans-serif; }
+  .loading-wrapper .loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(169, 239, 205, 0.8);
+    display: block;
+    z-index: 10; }
+  .loading-wrapper .loading-title {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -175px;
+    margin-top: -75px;
+    width: 350px;
+    height: 150px;
+    background: #ffffff;
+    z-index: 100;
+    box-sizing: border-box;
+    font-size: 50px;
+    line-height: 50px;
+    padding-top: 47.5px;
+    text-align: center;
+    border-radius: 25em;
+    box-shadow: 2px 4px 4px #ccc;
+    text-shadow: 5px 2px #eee;
+    color: #d75893;
+    font-style: italic; }
+    .loading-wrapper .loading-title .loading-subtitle {
+      font-size: 20px;
+      font-style: normal;
+      float: right;
+      padding-right: 50px;
+      margin-top: -10px;
+      color: #666; }
+
+.new-console {
+  position: absolute;
+  top: 50px;
+  right: 100px;
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50em;
+  background-color: #9382da; }
+  .new-console:before {
+    position: absolute;
+    content: "+";
+    font-size: 40px;
+    top: 8px;
+    left: 13px;
+    color: #fff; }
+  .new-console:hover {
+    background-color: #c370d9; }
+
+.footer {
+  position: absolute;
+  z-index: 999;
+  bottom: 30px;
+  left: 50%;
+  width: 400px;
+  margin-left: -200px;
+  padding: 10px 10px;
+  border-radius: 25em;
+  text-align: center;
+  background-color: #ccc;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 11px;
+  color: #888; }
